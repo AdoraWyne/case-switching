@@ -11,9 +11,9 @@
  * ```
  */
 export function formatKebabToTitle(str: string): string {
-  const test = str.split("-");
-  const newStr = test.map((e) => {
-    return e.charAt(0).toUpperCase() + e.substring(1);
-  });
-  return newStr.join(" ");
+  return str
+    .replace(/(\w)(\w*)/g, (_, first, rest) => {
+      return first.toUpperCase() + rest.toLowerCase();
+    })
+    .replace(/-+/g, " ");
 }

@@ -10,6 +10,6 @@ it("returns string", () => {
 it("returns string when '--'", () => {
   const input = "adora-hou--van-appel";
   const result = formatKebabToTitle(input);
-  expect(result).toBe("Adora Hou  Van Appel"); // fix this
+  expect(result).toBe("Adora Hou Van Appel"); // fix this
 });
 // tests for empty string, white space, uppercase, double hyphen "-"
