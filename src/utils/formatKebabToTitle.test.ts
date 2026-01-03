@@ -4,8 +4,8 @@ import { formatKebabToTitle } from "./formatKebabToTitle";
 describe("formatKebabToTitle function", () => {
   it.each([
     {
-      input: "adora-hou-van-appel",
-      expected: "Adora Hou Van Appel",
+      input: "adora-hou-van-appel-heerlijk",
+      expected: "Adora Hou Van Appel Heerlijk",
     },
     {
       input: "adora-hou--van-appel",
