@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { formatKebabToTitle } from "./utils/formatKebabToTitle";
 import "./App.css";
 
 function App() {
-  const [value, setValue] = useState<string>("adora-hou-van-appel");
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [transformedKebabToTitle, setTransformedKebabToTitle] =
+    useState<string>("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setValue(e.target.value);
-
-  const transformedKebabToTitle = formatKebabToTitle(value);
+  const handleClick = () => {
+    setTransformedKebabToTitle(formatKebabToTitle(inputRef.current?.value));
+  };
 
   return (
     <div>
@@ -18,9 +19,11 @@ function App() {
         type="text"
         name="kebab-input"
         maxLength="100"
-        value={value}
-        onChange={handleChange}
+        ref={inputRef}
       />
+      <button type="button" onClick={handleClick}>
+        Abadacabara ✨!
+      </button>
       <br />
       <label htmlFor="kebab-output">Kebab Transformer ✨: </label>
       <output id="kebab-output" name="kebab-output" htmlFor="kebab-input">
