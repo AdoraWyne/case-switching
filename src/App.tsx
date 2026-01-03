@@ -16,11 +16,16 @@ function App() {
       <input
         id="kebab-input"
         type="text"
-        maxlength="100"
+        name="kebab-input"
+        maxLength="100"
         value={value}
         onChange={handleChange}
       />
-      <div>Kebab Transformer ✨: {transformedKebabToTitle}</div>
+      <br />
+      <label htmlFor="kebab-output">Kebab Transformer ✨: </label>
+      <output id="kebab-output" name="kebab-output" htmlFor="kebab-input">
+        {transformedKebabToTitle}
+      </output>
     </div>
   );
 }
